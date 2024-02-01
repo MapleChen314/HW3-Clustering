@@ -115,3 +115,11 @@ def plot_multipanel(
     else:
         plt.show()
 
+def get_distance(data_point, centroid) -> float:
+    '''
+    Returns the euclidean distance between two points
+    '''
+    components=[x - y for x, y in zip(data_point, centroid)]
+    compsq=[x**2 for x in components]
+    distance=np.sqrt(sum(compsq))
+    return distance
